@@ -23,7 +23,7 @@
         app:itemIconTint="@color/selector_custom"
         app:itemTextColor="@color/selector_custom"
         app:menu="@menu/bottom_nav_menu"
-        app:labelVisibilityMode="labeled"
+        app:labelVisibilityMode="selected"
         />
 
     <fragment
