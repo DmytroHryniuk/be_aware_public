@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.hryniuk.beaware.ui.home.HomeFragment"
-        android:label="@string/title_home"
+        android:name="com.hryniuk.beaware.ui.world.WorldFragment"
+        android:label="@string/title_world"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.hryniuk.beaware.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
+        android:name="com.hryniuk.beaware.ui.local.LocalFragment"
+        android:label="@string/title_local"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.hryniuk.beaware.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
+        android:name="com.hryniuk.beaware.ui.chart.ChartFragment"
+        android:label="@string/title_chart"
         tools:layout="@layout/fragment_notifications" />
 </navigation>

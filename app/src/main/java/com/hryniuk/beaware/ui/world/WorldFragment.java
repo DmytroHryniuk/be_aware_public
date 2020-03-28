@@ -1,4 +1,4 @@
-package com.hryniuk.beaware.ui.notifications;
+package com.hryniuk.beaware.ui.world;
 
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -21,9 +21,8 @@ import com.hryniuk.beaware.R;
 
 import java.util.Objects;
 
-public class NotificationsFragment extends Fragment {
+public class WorldFragment extends Fragment {
 
-    private NotificationsViewModel notificationsViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -32,7 +31,7 @@ public class NotificationsFragment extends Fragment {
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT, ActionBar.LayoutParams.WRAP_CONTENT);
 
         tv.setLayoutParams(lp);
-        tv.setText("Chart");
+        tv.setText("World Info");
         tv.setTextSize(20);
         tv.setTextColor(Color.parseColor("#FFFFFF"));
         Typeface tf = ResourcesCompat.getFont(Objects.requireNonNull(getActivity()), R.font.comfortaa_bold);
@@ -42,16 +41,11 @@ public class NotificationsFragment extends Fragment {
 
 
 
-        notificationsViewModel =
-                ViewModelProviders.of(this).get(NotificationsViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_notifications, container, false);
-        final TextView textView = root.findViewById(R.id.text_notifications);
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        final TextView textView = root.findViewById(R.id.text_home);
+
+                textView.setText("DATA");
+
         return root;
     }
 }

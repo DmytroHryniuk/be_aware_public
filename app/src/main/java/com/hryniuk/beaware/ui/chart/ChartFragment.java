@@ -1,11 +1,10 @@
-package com.hryniuk.beaware.ui.home;
+package com.hryniuk.beaware.ui.chart;
 
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,9 +21,8 @@ import com.hryniuk.beaware.R;
 
 import java.util.Objects;
 
-public class HomeFragment extends Fragment {
+public class ChartFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -33,7 +31,7 @@ public class HomeFragment extends Fragment {
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT, ActionBar.LayoutParams.WRAP_CONTENT);
 
         tv.setLayoutParams(lp);
-        tv.setText("World Info");
+        tv.setText("Chart Info");
         tv.setTextSize(20);
         tv.setTextColor(Color.parseColor("#FFFFFF"));
         Typeface tf = ResourcesCompat.getFont(Objects.requireNonNull(getActivity()), R.font.comfortaa_bold);
@@ -42,16 +40,13 @@ public class HomeFragment extends Fragment {
         Objects.requireNonNull(((MainActivity) getActivity()).getSupportActionBar()).setCustomView(tv);
 
 
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
+
+        View root = inflater.inflate(R.layout.fragment_notifications, container, false);
+        final TextView textView = root.findViewById(R.id.text_notifications);
+
+                textView.setText("DATA2");
+
         return root;
     }
 }
