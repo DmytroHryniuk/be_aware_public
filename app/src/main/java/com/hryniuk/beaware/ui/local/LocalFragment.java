@@ -39,9 +39,7 @@ public class LocalFragment extends Fragment {
 
 
         View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
-        final TextView textView = root.findViewById(R.id.text_dashboard);
 
-                textView.setText("DATA3");
 
         return root;
     }
