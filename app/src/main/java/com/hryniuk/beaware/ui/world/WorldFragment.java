@@ -35,11 +35,11 @@ import java.util.Objects;
 
 public class WorldFragment extends Fragment {
 
-    TextView total_cases_info, deaths_info, recovered_info;
-    LinearLayout infoPanel;
-    String TAG = "firebase:";
-    ProgressBar progressBar;
-    final Handler handler = new Handler();
+    private TextView total_cases_info, deaths_info, recovered_info;
+    private LinearLayout infoPanel;
+    private String TAG = "firebase:";
+    private ProgressBar progressBar;
+    private final Handler handler = new Handler();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -81,7 +81,7 @@ public class WorldFragment extends Fragment {
                 progressBar.setVisibility(View.GONE);
                 infoPanel.setVisibility(View.VISIBLE);
             }
-        }, 3000);
+        }, 1500);
 
 
     }
