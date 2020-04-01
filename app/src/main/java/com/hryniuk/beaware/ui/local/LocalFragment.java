@@ -9,6 +9,7 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.appcompat.app.ActionBar;
 
 import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -20,6 +21,8 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -27,6 +30,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.github.ybq.android.spinkit.sprite.Sprite;
 import com.github.ybq.android.spinkit.style.WanderingCubes;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.hryniuk.beaware.MainActivity;
 import com.hryniuk.beaware.R;
 
@@ -41,6 +49,8 @@ public class LocalFragment extends Fragment {
     private CardAdapter adapter;
     private ArrayList<World> worldArrayList;
     private final Handler handler = new Handler();
+    private View root;
+    int count = 0;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -57,20 +67,59 @@ public class LocalFragment extends Fragment {
         Objects.requireNonNull(((MainActivity) getActivity()).getSupportActionBar()).setCustomView(tv);
         setHasOptionsMenu(true);
 
+        root = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference eventIdRef = rootRef.child("infoCountry");
+        eventIdRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                worldArrayList = new ArrayList();
+                try {
+                    for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                        World world = postSnapshot.getValue(World.class);
+                        worldArrayList.add(world);
 
-        View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
+                          Log.d("TAG", world.getCountryother() + " " + world.getTotalcases());
+                    }
 
+
+
+
+
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (worldArrayList!=null){
+
+                    initView(root);
+                }
+                else {
+                    handler.postDelayed(this, 2000);
+                }
+
+            }
+        }, 2000);
 
         hideAnim = root.findViewById(R.id.hideAnim);
         infoPanel = root.findViewById(R.id.infoPanel);
         infoPanel.setVisibility(View.GONE);
-        initView(root);
-
 
 
         return root;
     }
-
 
 
     @Override
@@ -83,19 +132,20 @@ public class LocalFragment extends Fragment {
                 hideAnim.setVisibility(View.GONE);
                 infoPanel.setVisibility(View.VISIBLE);
             }
-        }, 1500);
+        }, 2000);
 
     }
 
 
     private void initView(View view) {
-        GridLayoutManager mLayoutManager = new GridLayoutManager(getActivity(),2);
+        GridLayoutManager mLayoutManager = new GridLayoutManager(getActivity(), 2);
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(mLayoutManager);
         //recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        createListData();
+        //createListData();
+
         adapter = new CardAdapter(getActivity(), worldArrayList);
         recyclerView.setAdapter(adapter);
 
@@ -105,7 +155,7 @@ public class LocalFragment extends Fragment {
 
 
     @Override
-    public void onCreateOptionsMenu(Menu menu,  MenuInflater inflater) {
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 
         inflater.inflate(R.menu.search_menu, menu);
 
@@ -126,34 +176,8 @@ public class LocalFragment extends Fragment {
                 return false;
             }
         });
-         super.onCreateOptionsMenu(menu, inflater);
+        super.onCreateOptionsMenu(menu, inflater);
     }
-
-    private void createListData() {
-        worldArrayList = new ArrayList<>();
-        World world = new World("China", "81,470", "+31", "3,304", "+4", "75,700", "2,466");
-        worldArrayList.add(world);
-        world = new World("Spain", "81,470", "+31", "3,304", "+4", "75,700", "2,466");
-        worldArrayList.add(world);
-        world = new World("Netherlands", "81,470", "+31", "3,304", "+4", "75,700", "2,466");
-        worldArrayList.add(world);
-        world = new World("Italy", "81,470", "+31", "3,304", "+4", "75,700", "2,466");
-        worldArrayList.add(world);
-        world = new World("Iran", "81,470", "+31", "3,304", "+4", "75,700", "2,466");
-        worldArrayList.add(world);
-        world = new World("Germany", "81,470", "+31", "3,304", "+4", "75,700", "2,466");
-        worldArrayList.add(world);
-        world = new World("France", "81,470", "+31", "3,304", "+4", "75,700", "2,466");
-        worldArrayList.add(world);
-        world = new World("S. Korea", "81,470", "+31", "3,304", "+4", "75,700", "2,466");
-        worldArrayList.add(world);
-        world = new World("USA", "81,470", "+31", "3,304", "+4", "75,700", "2,466");
-        worldArrayList.add(world);
-        world = new World("Switzerland", "81,470", "+31", "3,304", "+4", "75,700", "2,466");
-        worldArrayList.add(world);
-        //adapter.notifyDataSetChanged();
-    }
-
 
 
 }

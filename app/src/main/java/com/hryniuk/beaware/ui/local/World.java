@@ -2,15 +2,15 @@ package com.hryniuk.beaware.ui.local;
 
 public class World {
 
-    private String countryName;
-    private String totalCases;
-    // private String newCases;
-    private String totalDeaths;
-    // private String newDeaths;
-    private String totalRecovered;
-    // private String activerCases;
+    private String countryother;
+    private String totalcases;
+    private String newcases;
+    private String totaldeaths;
+    private String newdeaths;
+    private String totalrecovered;
+    private String activecases;
 
-    public World(String countryName, String totalCases, String newCases, String totalDeaths,
+    /*public World(String countryName, String totalCases, String newCases, String totalDeaths,
                  String newDeaths, String totalRecovered, String activerCases) {
 
         this.countryName = countryName;
@@ -21,73 +21,61 @@ public class World {
         this.totalRecovered = totalRecovered;
         //  this.activerCases = activerCases;
 
-    }
-
-    public String getCountryName() {
-        return countryName;
-    }
-
-    public void setCountryName(String countryName) {
-        this.countryName = countryName;
-    }
-
-
-
-    public String getTotalCases() {
-        return totalCases;
-    }
-
-    public void setTotalCases(String totalCases) {
-        this.totalCases = totalCases;
-    }
-
-
-
-   /* public String getNewCases() {
-        return newCases;
-    }
-
-    public void setNewCases(String newCases) {
-        this.newCases = newCases;
-    } */
-
-
-
-    public String getTotalDeaths() {
-        return totalDeaths;
-    }
-
-    public void setTotalDeaths(String totalDeaths) {
-        this.totalDeaths = totalDeaths;
-    }
-
-
-
-    /*public String getNewDeaths() {
-        return newDeaths;
-    }
-
-    public void setNewDeaths(String newDeaths) {
-        this.newDeaths = newDeaths;
     }*/
 
-
-
-    public String getTotalRecovered() {
-        return totalRecovered;
+    public String getCountryother() {
+        return countryother;
     }
 
-    public void setTotalRecovered(String totalRecovered) {
-        this.totalRecovered = totalRecovered;
+    public void setCountryother(String countryother) {
+        this.countryother = countryother;
     }
 
-
-
-   /* public String getActiverCases() {
-        return activerCases;
+    public String getTotalcases() {
+        return totalcases;
     }
 
-    public void setActiverCases(String activerCases) {
-        this.activerCases = activerCases;
-    }*/
+    public void setTotalcases(String totalcases) {
+        this.totalcases = totalcases;
+    }
+
+    public String getNewcases() {
+        return newcases;
+    }
+
+    public void setNewcases(String newcases) {
+        this.newcases = newcases;
+    }
+
+    public String getTotaldeaths() {
+        return totaldeaths;
+    }
+
+    public void setTotaldeaths(String totaldeaths) {
+        this.totaldeaths = totaldeaths;
+    }
+
+    public String getNewdeaths() {
+        return newdeaths;
+    }
+
+    public void setNewdeaths(String newdeaths) {
+        this.newdeaths = newdeaths;
+    }
+
+    public String getTotalrecovered() {
+        return totalrecovered;
+    }
+
+    public void setTotalrecovered(String totalrecovered) {
+        this.totalrecovered = totalrecovered;
+    }
+
+    public String getActivecases() {
+        return activecases;
+    }
+
+    public void setActivecases(String activecases) {
+        this.activecases = activecases;
+    }
 }

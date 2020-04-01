@@ -63,7 +63,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.WorldHolder> i
                 String filterPattern = constraint.toString().toLowerCase().trim();
 
                 for (World item : planetsFull) {
-                    if (item.getCountryName().toLowerCase().contains(filterPattern)) {
+                    if (item.getCountryother().toLowerCase().contains(filterPattern)) {
                         filteredList.add(item);
                     }
                 }
@@ -103,12 +103,12 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.WorldHolder> i
         }
 
         void setDetails(World world) {
-            txtCountry.setText(world.getCountryName());
-            txtTotalCases.setText(String.format(Locale.US, "Total Cases : %s", world.getTotalCases()));
+            txtCountry.setText(world.getCountryother());
+            txtTotalCases.setText(String.format(Locale.US, "Total Cases : %s", world.getTotalcases()));
             //txtNewCases.setText(String.format(Locale.US, "New Cases : %s", world.getNewCases()));
-            txtTotalDeaths.setText(String.format(Locale.US, "Total Death : %s", world.getTotalDeaths()));
+            txtTotalDeaths.setText(String.format(Locale.US, "Total Death : %s", world.getTotaldeaths()));
             //txtNewDeaths.setText(String.format(Locale.US, "New Deaths : %s", world.getNewDeaths()));
-            txtTotalRecovered.setText(String.format(Locale.US, "Total Recovered : %s", world.getTotalRecovered()));
+            txtTotalRecovered.setText(String.format(Locale.US, "Total Recovered : %s", world.getTotalrecovered()));
             //txtActiveCases.setText(String.format(Locale.US, "Active Cases : %s", world.getActiverCases()));
 
         }
