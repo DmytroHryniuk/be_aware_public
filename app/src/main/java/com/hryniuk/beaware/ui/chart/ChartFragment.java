@@ -61,9 +61,10 @@ public class ChartFragment extends Fragment {
 
             dataVals.add(new BarEntry(i, dataVals1.get(i)));
 
-            //Collections.reverse(dataVals);
+
             // Log.i("DATA", dataVals.toString());
         }
+        Collections.reverse(dataVals);
         return dataVals;
     }
 
@@ -88,6 +89,7 @@ public class ChartFragment extends Fragment {
         }
         //Log.i("DATA", dataVals.toString());
         //Collections.reverse(dataVals);
+        Collections.reverse(dataVals);
         return dataVals;
     }
 
@@ -111,6 +113,7 @@ public class ChartFragment extends Fragment {
         }
         //Log.i("DATA", dataVals.toString());
         //Collections.reverse(dataVals);
+        Collections.reverse(dataVals);
         return dataVals;
     }
 
@@ -217,9 +220,9 @@ public class ChartFragment extends Fragment {
 
         BarData data = new BarData(barDataSet1, barDataSet2, barDataSet3);
         data.setValueFormatter(new MyValueFormatter());
-        data.setValueTextSize(11f);
+        data.setValueTextSize(10f);
         data.setValueTextColor(Color.BLACK);
-        data.setValueTypeface(ResourcesCompat.getFont(getActivity(), R.font.advent_pro_semibold));
+        data.setValueTypeface(ResourcesCompat.getFont(getActivity(), R.font.poppins_medium));
 
         mpBarChart.setData(data);
 
@@ -234,7 +237,8 @@ public class ChartFragment extends Fragment {
         legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
         legend.setOrientation(Legend.LegendOrientation.HORIZONTAL);
         XAxis xAxis = mpBarChart.getXAxis();
-        //Collections.reverse(countryArrayList);
+
+        Collections.reverse(countryArrayList);
         xAxis.setValueFormatter(new IndexAxisValueFormatter(countryArrayList));
         xAxis.setCenterAxisLabels(true);
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
