@@ -1,6 +1,6 @@
-package com.hryniuk.beaware.ui.local;
+package com.hryniuk.beaware.ui.chart;
 
-public class World {
+public class chartWorld {
 
     private String countryother;
     private int totalcases;
@@ -9,19 +9,7 @@ public class World {
     private String newdeaths;
     private String totalrecovered;
     private String activecases;
-
-    /*public World(String countryName, String totalCases, String newCases, String totalDeaths,
-                 String newDeaths, String totalRecovered, String activerCases) {
-
-        this.countryName = countryName;
-        this.totalCases = totalCases;
-        //  this.newCases = newCases;
-        this.totalDeaths = totalDeaths;
-        //  this.newDeaths = newDeaths;
-        this.totalRecovered = totalRecovered;
-        //  this.activerCases = activerCases;
-
-    }*/
+    public chartWorld(){}
 
     public String getCountryother() {
         return countryother;
