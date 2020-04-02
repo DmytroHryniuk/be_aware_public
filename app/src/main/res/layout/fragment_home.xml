@@ -59,7 +59,7 @@
                 android:layout_marginTop="46dp"
                 android:layout_marginEnd="8dp"
                 android:fontFamily="@font/roboto_condensed_bold"
-                android:text="Deaths:"
+                android:text="Fatal Cases:"
                 android:textAlignment="center"
                 android:textColor="#E91E63"
                 android:textSize="36sp" />
@@ -72,7 +72,7 @@
                 android:layout_marginTop="2dp"
                 android:layout_marginEnd="8dp"
                 android:fontFamily="@font/advent_pro_semibold"
-                android:text="Deaths"
+                android:text="Fatal Cases"
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textSize="42sp"

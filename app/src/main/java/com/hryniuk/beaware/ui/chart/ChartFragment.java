@@ -208,7 +208,7 @@ public class ChartFragment extends Fragment {
         mpBarChart = root.findViewById(R.id.grouped_BarChart);
         BarDataSet barDataSet1 = new BarDataSet(dataValue1(), "Total cases");
         barDataSet1.setColor(Color.parseColor("#FBC02D"));
-        BarDataSet barDataSet2 = new BarDataSet(dataValue2(), "Deaths");
+        BarDataSet barDataSet2 = new BarDataSet(dataValue2(), "Total fatal");
         barDataSet2.setColor(Color.parseColor("#E64A19"));
         BarDataSet barDataSet3 = new BarDataSet(dataValue3(), "Recovered");
         barDataSet3.setColor(Color.parseColor("#388E3C"));

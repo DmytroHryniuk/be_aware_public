@@ -104,11 +104,11 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.WorldHolder> i
 
         void setDetails(World world) {
             txtCountry.setText(world.getCountryother());
-            txtTotalCases.setText(String.format(Locale.US, "Total Cases : %s", world.getTotalcases()));
+            txtTotalCases.setText(String.format(Locale.US, "Total Cases: %s", world.getTotalcases()));
             //txtNewCases.setText(String.format(Locale.US, "New Cases : %s", world.getNewCases()));
-            txtTotalDeaths.setText(String.format(Locale.US, "Total Death : %s", world.getTotaldeaths()));
+            txtTotalDeaths.setText(String.format(Locale.US, "Total Fatal: %s", world.getTotaldeaths()));
             //txtNewDeaths.setText(String.format(Locale.US, "New Deaths : %s", world.getNewDeaths()));
-            txtTotalRecovered.setText(String.format(Locale.US, "Total Recovered : %s", world.getTotalrecovered()));
+            txtTotalRecovered.setText(String.format(Locale.US, "Total Recovered: %s", world.getTotalrecovered()));
             //txtActiveCases.setText(String.format(Locale.US, "Active Cases : %s", world.getActiverCases()));
 
         }
