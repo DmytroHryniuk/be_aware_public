@@ -10,6 +10,7 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -43,6 +44,9 @@ import java.util.Collections;
 import java.util.Objects;
 
 public class ChartFragment extends Fragment {
+
+    private LinearLayout infoPanel;
+    private RelativeLayout hideAnim;
     private View root;
     private BarChart mpBarChart;
     final Handler handler = new Handler();
@@ -57,7 +61,7 @@ public class ChartFragment extends Fragment {
 
             dataVals.add(new BarEntry(i, dataVals1.get(i)));
 
-            Collections.reverse(dataVals);
+            //Collections.reverse(dataVals);
             // Log.i("DATA", dataVals.toString());
         }
         return dataVals;
@@ -83,7 +87,7 @@ public class ChartFragment extends Fragment {
 
         }
         //Log.i("DATA", dataVals.toString());
-        Collections.reverse(dataVals);
+        //Collections.reverse(dataVals);
         return dataVals;
     }
 
@@ -106,7 +110,7 @@ public class ChartFragment extends Fragment {
             dataVals.add(new BarEntry(i, tmp));
         }
         //Log.i("DATA", dataVals.toString());
-        Collections.reverse(dataVals);
+        //Collections.reverse(dataVals);
         return dataVals;
     }
 
@@ -173,16 +177,29 @@ public class ChartFragment extends Fragment {
         });
 
 
+        hideAnim = root.findViewById(R.id.hideAnim);
+        infoPanel = root.findViewById(R.id.infoPanel);
+        infoPanel.setVisibility(View.GONE);
 
-        mpBarChart = root.findViewById(R.id.grouped_BarChart);
-        //chartInit();
 
 
 
         return root;
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
 
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                hideAnim.setVisibility(View.GONE);
+                infoPanel.setVisibility(View.VISIBLE);
+            }
+        }, 2200);
+
+    }
 
     private void init(View root) {
         mpBarChart = root.findViewById(R.id.grouped_BarChart);
@@ -200,9 +217,9 @@ public class ChartFragment extends Fragment {
 
         BarData data = new BarData(barDataSet1, barDataSet2, barDataSet3);
         data.setValueFormatter(new MyValueFormatter());
-        data.setValueTextSize(10f);
+        data.setValueTextSize(11f);
         data.setValueTextColor(Color.BLACK);
-
+        data.setValueTypeface(ResourcesCompat.getFont(getActivity(), R.font.advent_pro_semibold));
 
         mpBarChart.setData(data);
 
@@ -217,7 +234,7 @@ public class ChartFragment extends Fragment {
         legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
         legend.setOrientation(Legend.LegendOrientation.HORIZONTAL);
         XAxis xAxis = mpBarChart.getXAxis();
-        Collections.reverse(countryArrayList);
+        //Collections.reverse(countryArrayList);
         xAxis.setValueFormatter(new IndexAxisValueFormatter(countryArrayList));
         xAxis.setCenterAxisLabels(true);
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
