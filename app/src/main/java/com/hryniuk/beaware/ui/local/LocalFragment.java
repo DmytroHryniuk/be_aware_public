@@ -84,7 +84,12 @@ public class LocalFragment extends Fragment {
                     }
 
 
-
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            initView(root);
+                        }
+                    }, 1000);
 
 
 
@@ -99,19 +104,7 @@ public class LocalFragment extends Fragment {
             }
         });
 
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (worldArrayList!=null){
 
-                    initView(root);
-                }
-                else {
-                    handler.postDelayed(this, 2000);
-                }
-
-            }
-        }, 2000);
 
         hideAnim = root.findViewById(R.id.hideAnim);
         infoPanel = root.findViewById(R.id.infoPanel);
@@ -132,7 +125,7 @@ public class LocalFragment extends Fragment {
                 hideAnim.setVisibility(View.GONE);
                 infoPanel.setVisibility(View.VISIBLE);
             }
-        }, 2000);
+        }, 2200);
 
     }
 
