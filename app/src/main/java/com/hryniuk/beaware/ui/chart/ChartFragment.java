@@ -244,7 +244,7 @@ public class ChartFragment extends Fragment {
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setGranularity(1);
         xAxis.setGranularityEnabled(true);
-        xAxis.setTextSize(10f);
+        xAxis.setTextSize(12f);
         xAxis.setLabelCount(countryArrayList.size());
         xAxis.setTypeface(ResourcesCompat.getFont(getActivity(), R.font.comfortaa_bold));
         YAxis yAxis = mpBarChart.getAxisLeft();
