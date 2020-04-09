@@ -77,10 +77,12 @@ public class LocalFragment extends Fragment {
                 worldArrayList = new ArrayList();
                 try {
                     for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                        World world = postSnapshot.getValue(World.class);
-                        worldArrayList.add(world);
 
-                          Log.d("TAG", world.getCountryother() + " " + world.getTotalcases());
+                        if ((postSnapshot.child("totalcases").getValue(Integer.class))!=null) {
+                            World world = postSnapshot.getValue(World.class);
+                            worldArrayList.add(world);
+                        }
+                         // Log.d("TAG", world.getCountryother() + " " + world.getTotalcases());
                     }
 
 

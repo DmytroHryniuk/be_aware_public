@@ -7,6 +7,7 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.appcompat.app.ActionBar;
 
 import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -148,17 +149,22 @@ public class ChartFragment extends Fragment {
                        /* String country = postSnapshot.child("countryother").getValue(String.class);
                         String data1 = postSnapshot.child("totalcases").getValue(String.class);*/
 
-                        chartWorld cW = postSnapshot.getValue(chartWorld.class);
+                        /*chartWorld cW = postSnapshot.getValue(chartWorld.class);
 
 
 
                         countryArrayList.add(cW.getCountryother());
                         dataVals1.add(cW.getTotalcases());
                         dataVals2.add(cW.getTotaldeaths());
-                        dataVals3.add(cW.getTotalrecovered());
+                        dataVals3.add(cW.getTotalrecovered());*/
+                        if((postSnapshot.child("totalcases").getValue(Integer.class))!=null) {
+                            countryArrayList.add(postSnapshot.child("countryother").getValue(String.class));
+                            dataVals1.add(postSnapshot.child("totalcases").getValue(Integer.class));
+                            dataVals2.add(postSnapshot.child("totaldeaths").getValue(String.class));
+                            dataVals3.add(postSnapshot.child("totalrecovered").getValue(String.class));
+                        }
 
-
-                        //  Log.d("TAG", countryArrayList.toString() + " " + dataVals3.toString());
+                          Log.i("TAG",  dataVals1.toString());
                     }
 
                     handler.postDelayed(new Runnable() {
