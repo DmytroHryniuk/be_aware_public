@@ -49,7 +49,7 @@ public class WorldFragment extends Fragment {
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT, ActionBar.LayoutParams.WRAP_CONTENT);
 
         tv.setLayoutParams(lp);
-        tv.setText("World Info");
+        tv.setText(/*"World Info" + */getString(R.string.version));
         tv.setTextSize(20);
         tv.setTextColor(Color.parseColor("#FFFFFF"));
         Typeface tf = ResourcesCompat.getFont(Objects.requireNonNull(getActivity()), R.font.comfortaa_bold);

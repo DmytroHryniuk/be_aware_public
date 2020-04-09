@@ -3,4 +3,5 @@
     <string name="title_world">World</string>
     <string name="title_chart">Chart</string>
     <string name="title_local">Local</string>
+    <string name="version">be aware! ver:0.3</string>
 </resources>

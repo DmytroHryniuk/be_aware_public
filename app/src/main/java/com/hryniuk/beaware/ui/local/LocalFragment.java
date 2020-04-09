@@ -167,7 +167,8 @@ public class LocalFragment extends Fragment {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                adapter.getFilter().filter(newText);
+                if(adapter!=null){
+                adapter.getFilter().filter(newText);}
                 return false;
             }
         });
