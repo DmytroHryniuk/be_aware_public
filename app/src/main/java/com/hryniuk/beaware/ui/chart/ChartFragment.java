@@ -223,8 +223,10 @@ public class ChartFragment extends Fragment {
         description.setText("");
         mpBarChart.setDescription(description);
 
-
+        if (getActivity()!=null) {
         BarData data = new BarData(barDataSet1, barDataSet2, barDataSet3);
+
+
         data.setValueFormatter(new MyValueFormatter());
         data.setValueTextSize(10f);
         data.setValueTextColor(Color.BLACK);
@@ -295,10 +297,14 @@ public class ChartFragment extends Fragment {
         // mpBarChart.setDrawValueAboveBar(false);
         mpBarChart.notifyDataSetChanged();
         mpBarChart.refreshDrawableState();
-        mpBarChart.invalidate();
+        mpBarChart.invalidate();}
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
 
+    }
 
     public static class MyValueFormatter implements IValueFormatter {
         @Override
