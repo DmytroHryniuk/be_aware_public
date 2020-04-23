@@ -4,12 +4,12 @@
 
 ****
 #### Table of contents:
-1. [Summary](#Summary)
-2. [Remember!](#Remember)
-3. [Features](#Features)
-4. [Important note](#important-note)
-5. [Screens](#Screens)
-6. [Privacy policy](#privacy-policy)
+1. [Summary](#summary-arrow_up)
+2. [Remember!](#remember-arrow_up)
+3. [Features](#features-arrow_up)
+4. [Important note](#important-note-arrow_up)
+5. [Screens](#screens-arrow_up)
+6. [Privacy policy](#privacy-policy-arrow_up)
 ****
 #### Summary [:arrow_up:](#table-of-contents)
 Today it is crucial to be aware of disease rate in the world. Accurate knowledge about situation in particular countries and recovered and fatal cases can be lifesaving.
