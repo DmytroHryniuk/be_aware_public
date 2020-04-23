@@ -1,6 +1,6 @@
 # be aware!
 
-![icon_featured_graphic](https://github.com/DmytroHryniuk/be_aware_public/tree/master/screens/icon_featured_graphic.png)
+![icon_featured_graphic](/screens/icon_featured_graphic.png)
 
 ****
 #### Table of contents:
@@ -30,14 +30,14 @@ This application was developed in order to keep society informed and up-to-date 
 
 <h4>Screens:</h4>
 
-![1main_new](https://github.com/DmytroHryniuk/be_aware_public/tree/master/screens/1main_new.png)
+![1main_new](/screens/1main_new.png)
 
-![1chart1_new](https://github.com/DmytroHryniuk/be_aware_public/tree/master/screens/1chart1_new.png)
+![1chart1_new](/screens/1chart1_new.png)
 
-![1chart2_new](https://github.com/DmytroHryniuk/be_aware_public/tree/master/screens/1chart2_new.png)
+![1chart2_new](/screens/1chart2_new.png)
 
-![1cards1_new](https://github.com/DmytroHryniuk/be_aware_public/tree/master/screens/1cards1_new.png)
+![1cards1_new](/screens/1cards1_new.png)
 
-![1cards2_new](https://github.com/DmytroHryniuk/be_aware_public/tree/master/screens/1cards2_new.png)
+![1cards2_new](/screens/1cards2_new.png)
 
-![1cards3_new](https://github.com/DmytroHryniuk/be_aware_public/tree/master/screens/1cards3_new.png)
+![1cards3_new](/screens/1cards3_new.png)
