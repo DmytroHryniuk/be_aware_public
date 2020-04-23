@@ -28,7 +28,7 @@ You may experience poor connection problem. If you experience problems with upda
 #### Important note: [:arrow_up:](#table-of-contents)
 This application was developed in order to keep society informed and up-to-date about situation in the world, not for purposes of gain.<br/> This means that application does not contain any advertisements or in-app purchases.
 ****
-#### *The numerical data is provided for an example ONLY. The figures shown may be inaccurate. [:arrow_up:](#table-of-contents)
+#### *The numerical data is provided for for example ONLY. The figures shown may be inaccurate. [:arrow_up:](#table-of-contents)
 ****
 #### Screens: [:arrow_up:](#table-of-contents)
 
